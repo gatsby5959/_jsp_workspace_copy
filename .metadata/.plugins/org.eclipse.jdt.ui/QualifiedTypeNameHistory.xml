@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.apache.logging.slf4j.Log4jLoggerFactory"/>
+    <fullyQualifiedTypeName name="controller.BoardController"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="service.BoardService"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+</qualifiedTypeNameHistroy>

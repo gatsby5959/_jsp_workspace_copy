@@ -4,7 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
   <configuration>
   	<typeAliases>
-  		<typeAlias type ="domain.BoardVO" alias="bvo"/>
+  		<typeAlias type ="domain.BoardVO" alias="bvo"/> <!--여기별칭이 나중에 boardMapper.xml에서 쓰임 parameterType="bvo" -->
   	</typeAliases>
   <environments default="development">
     <environment id="development">

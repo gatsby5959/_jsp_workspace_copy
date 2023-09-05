@@ -11,10 +11,10 @@
 
 <ul>
 	<li>
-		<a href="#">게시판 글쓰기로 이동...</a>
+		<a href="/brd/register">게시판 글쓰기로 이동...</a>
 	</li>
 	<li>
-		<a href="#">게시판 리스트로 이동...</a>
+		<a href="/brd/list">게시판 리스트로 이동...</a>
 	</li>
 </ul>
 </body>

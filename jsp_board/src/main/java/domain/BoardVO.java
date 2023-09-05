@@ -105,5 +105,12 @@ primary key(bno)
 	public void setModdate(String moddate) {
 		this.moddate = moddate;
 	}
+
+	@Override
+	public String toString() {
+		return "BoardVO [bno=" + bno + ", title=" + title + ", writer=" + writer + ", content=" + content + ", regdate="
+				+ regdate + ", moddate=" + moddate + "]";
+	}
 	
+
 }
