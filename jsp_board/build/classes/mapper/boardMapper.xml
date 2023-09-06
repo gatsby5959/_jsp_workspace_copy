@@ -10,10 +10,28 @@
   	insert into board(title, writer, content)
   	values(#{title},#{writer},#{content})
   </insert>
+  
   <select id="list" resultType="bvo">
      select * from board order by bno desc
   </select>
-    <select id="detail" parameterType="int" resultType="bvo"> <!-- 들어온건 int 나갈건  bvo -->
+   
+  <select id="detail" parameterType="int" resultType="bvo"> <!-- 들어온건 int 나갈건  bvo -->
      select * from board where bno = #{bno}
   </select>
+  
+  <update id = "up" parameterType="bvo">
+  update board set title = #{title}, content=#{content}, moddate=now()
+  where bno = #{bno}
+  </update>
+  
+<!--   <delete id = "del" parameterType="bvo"> -->
+<!--   delete from board  -->
+<!--   where bno = #{bno} -->
+<!--   </delete> -->
+  
+  <delete id = "del" parameterType="int">
+  delete from board 
+  where bno = #{bno}
+  </delete>
+  
   </mapper>

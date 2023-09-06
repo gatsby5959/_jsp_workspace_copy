@@ -88,7 +88,7 @@ public class BoardController extends HttpServlet {
 				log.info("list check 1");
 				List<BoardVO> list = bsv.getList();
 				log.info("list check 4"); 
-				log.info(list.get(0).toString()); //가져온 리스트에 첫 값을 로그에 찍어봄 // BoardVO클래스에 toString 제너레잇해야함
+//				log.info(list.get(0).toString()); //가져온 리스트에 첫 값을 로그에 찍어봄 // BoardVO클래스에 toString 제너레잇해야함  잘 되면 지워야한 안그러면 나중에 에러날수도 ㅣㅇㅆ음
 				
 				//list를 화면으로 보내기 requset객체에 실어 보내기  이름은 "list"
 				request.setAttribute("list", list);
@@ -125,12 +125,53 @@ public class BoardController extends HttpServlet {
 				BoardVO bvo = bsv.getDetail(bno);
 				request.setAttribute("bvo", bvo);
 				destPage="/modify.jsp";
+//				log.info("컨텐트>>>>환2>>>> "+content);
 				
 			} catch (Exception e) {
 				e.printStackTrace();
 				log.info("modify error");
 			}
 			break;
+			
+		case "edit":
+			try {
+				//jsp의 파라미터 받기
+				int bno = Integer.parseInt(request.getParameter("bno"));
+				String title = request.getParameter("title");
+				String content = request.getParameter("content");
+				BoardVO bvo = new BoardVO(bno,title,content);
+//				log.info("컨텐트>>>>환1>>>> "+content);
+				log.info("edit check 1");
+				log.info("bvo >>>>> " + bvo);
+				isOk = bsv.modify(bvo);
+				log.info((isOk>0)? "OK" : "Fail");
+//				destPage = "list"; //내부 case 로 이동  (list는 그냥 가도 됨) (detail은 bno가 필요함)
+				destPage = "detail?bno="+bno; //detail로 이동
+				log.info("컨텐트>>>>환2>>>> "+content);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				log.info("edit error");
+			}
+			break;	
+			
+		case "remove":
+			try {
+				//jsp의 파라미터 받기
+				int bno = Integer.parseInt(request.getParameter("bno"));
+
+				log.info("edit check 1");
+
+				isOk = bsv.remove(bno); //bno로 함
+				log.info((isOk>0)? "OK" : "Fail");
+				destPage = "list"; //내부 case 로 이동  (list는 그냥 가도 됨) (detail은 bno가 필요함)
+//				destPage = "detail?bno="+bno; //detail로 이동
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				log.info("remove error");
+			}
+			break;	
 			
 			
 		}//switch문 끝

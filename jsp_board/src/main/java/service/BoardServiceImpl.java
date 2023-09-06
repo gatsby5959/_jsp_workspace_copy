@@ -36,6 +36,24 @@ public BoardVO getDetail(int bno) {
 	return bdao.selectOne(bno);
 }
 
+@Override
+public int modify(BoardVO bvo) {
+	log.info("edit check 2");
+	return bdao.update(bvo);
+}
+
+@Override
+public int remove(BoardVO bvo) {
+	log.info("edit check 2");
+	return bdao.delete(bvo);
+}
+
+@Override
+public int remove(int bno) {
+	log.info("edit check 2");
+	return bdao.delete(bno);
+}
+
 
    
    

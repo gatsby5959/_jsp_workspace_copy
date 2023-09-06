@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="BoardMapper">
+  <!-- SQL구문별 생성 -->
+  <!-- SQL 구문별 id namespace.id -->
+  <!-- paramiterType = 가져온 객체, resultType = 결과 객체 -->
+  <insert id='add' parameterType="bvo"><!-- mybatisconfig.xml 에서의 별칭 bvo --> <!-- dao임플에서 만든 아이디add -->
+  	insert into board(title, writer, content)
+  	values(#{title},#{writer},#{content})
+  </insert>
+  <select id="list" resultType="bvo">
+     select * from board order by bno desc
+  </select>
+    <select id="detail" parameterType="int" resultType="bvo"> <!-- 들어온건 int 나갈건  bvo -->
+     select * from board where bno = #{bno}
+  </select>
+  </mapper>

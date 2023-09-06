@@ -26,12 +26,17 @@
 		<td>${bvo.regdate} </td>
 	</tr>
 	<tr>
+		<th>MOD_DATE</th>
+		<td>${bvo.moddate} </td>
+	</tr>
+	<tr>
 		<th>CONTENT</th>
 		<td>${bvo.content} </td>
 	</tr>
 </table>
 <a href="/brd/modify?bno=${bvo.bno}"><button type="button">modify</button></a>
 <a href="/brd/remove?bno=${bvo.bno}"><button type="button">delete</button></a>
+<a href="/brd/list"><button type="button">list</button></a>
 
 </body>
 </html>

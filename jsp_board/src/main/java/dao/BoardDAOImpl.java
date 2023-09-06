@@ -45,5 +45,41 @@ public class BoardDAOImpl implements BoardDAO {
 		log.info("detail check 3");
 		return sql.selectOne(NS+"detail", bno);
 	}
+
+	@Override
+	public int update(BoardVO bvo) {
+		log.info("edit check 3");
+		//insert update delete 시 commit필요
+		int isOk = sql.update(NS+"up", bvo);
+		if(isOk>0) {
+			sql.commit();
+		}
+		log.info("컨텐트>>>>환4>>>> "+bvo);
+		return isOk;
+	}
+
+	@Override
+	public int delete(BoardVO bvo) {
+		log.info("remove check 3");
+		//insert update delete 시 commit필요
+		int isOk = sql.delete(NS+"del", bvo);
+		if(isOk>0) {
+			sql.commit();
+		}
+//		log.info("컨텐트>>>>환4>>>> "+bvo);
+		return isOk;
+	}
+
+	@Override
+	public int delete(int bno) {
+		log.info("remove check 3");
+		//insert update delete 시 commit필요
+		int isOk = sql.delete(NS+"del", bno);
+		if(isOk>0) {
+			sql.commit();
+		}
+//		log.info("컨텐트>>>>환4>>>> "+bvo);
+		return isOk;
+	}
 	
 }

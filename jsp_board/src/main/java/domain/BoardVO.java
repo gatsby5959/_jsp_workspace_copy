@@ -40,10 +40,10 @@ primary key(bno)
 	}
 	
 	//update : bno, title, content
-	public BoardVO(int bno, String title ,String regdate) {
+	public BoardVO(int bno, String title ,String content) {
 		this.bno = bno;
 		this.title = title;
-		this.regdate = regdate;
+		this.content = content;
 	}
 
 	//detail: 전부다
