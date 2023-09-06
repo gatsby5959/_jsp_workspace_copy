@@ -39,5 +39,11 @@ public class BoardDAOImpl implements BoardDAO {
 		log.info("list check 3");
 		return sql.selectList(NS+"list");
 	}
+
+	@Override
+	public BoardVO selectOne(int bno) {
+		log.info("detail check 3");
+		return sql.selectOne(NS+"detail", bno);
+	}
 	
 }

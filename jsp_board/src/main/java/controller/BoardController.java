@@ -101,9 +101,39 @@ public class BoardController extends HttpServlet {
 			break;
 			
 			
+		case "detail":
+			try {
+				//jsp에서 보낸 bno 받기  => STring을 ㅜint로 형변환해서 받기
+				int bno = Integer.parseInt( request.getParameter("bno")) ;// 리퀘스트쩜겟파라미터는 무조건 String으로 받음
+				log.info("detail check 1");
+				BoardVO bvo = bsv.getDetail(bno);
+				log.info("detail check 4");
+				log.info("bvo>>>>>>"+bvo);
+				request.setAttribute("bvo", bvo);
+				destPage="/detail.jsp";
+			} catch (Exception e) {
+				e.printStackTrace();
+				log.info("detail error!!");
+			}
+			break;
+			
+		case "modify":
+			try {
+				//bno 받기
+				int bno = Integer.parseInt(request.getParameter("bno"));
+				log.info("modify check 1");
+				BoardVO bvo = bsv.getDetail(bno);
+				request.setAttribute("bvo", bvo);
+				destPage="/modify.jsp";
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+				log.info("modify error");
+			}
+			break;
 			
 			
-		}
+		}//switch문 끝
 		
 		//목적지 데이터 경로로 전달해 주는 객체(reqeustDispatcher)
 		rdp = request.getRequestDispatcher(destPage);		

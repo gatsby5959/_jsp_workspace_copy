@@ -30,6 +30,12 @@ public List<BoardVO> getList() {
 	return bdao.selectList();
 }
 
+@Override
+public BoardVO getDetail(int bno) {
+	log.info("detail check 2");
+	return bdao.selectOne(bno);
+}
+
 
    
    

@@ -21,13 +21,14 @@
 	
 	<c:forEach items="${list }" var="bvo">
 		<tr>
-			<td>${bvo.bno }</td>
-			<td>${bvo.title }</td>
-			<td>${bvo.writer }</td>
-			<td>${bvo.regdate }</td>
+			<td><a href="/brd/detail?bno=${bvo.bno}">${bvo.bno}</a></td><!-- 화면 이동은 / 을 쓴다 쩜 안쓴다 -->
+			<td><a href="/brd/detail?bno=${bvo.bno}">${bvo.title}</a></td>
+			<td>${bvo.writer}</td>
+			<td>${bvo.regdate}</td>
 		</tr>
-	</c:forEach>
-	
+	</c:forEach>	
 </table>
+<a href="/index.jsp"><button type="button">index</button></a>
+<a href="/brd/register"><button>register</button></a>
 </body>
 </html>
